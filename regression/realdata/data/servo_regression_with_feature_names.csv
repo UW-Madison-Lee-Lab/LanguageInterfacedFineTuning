@@ -1,0 +1,16 @@
+,0,1,2,3,4,5,6
+0,./servo\servo_fn_20_train.jsonl,10,26,1.937,1.937,-4096.6172,0.862573089
+1,./servo\servo_fn_20_train.jsonl,15,26,1.978,1.978,0,0.88083096
+2,./servo\servo_fn_20_train.jsonl,25,26,1.9543,1.9543,-272.6201,0.87027702
+3,./servo\servo_fn_40_train.jsonl,10,26,1.9599,1.9599,0,0.872770778
+4,./servo\servo_fn_40_train.jsonl,15,26,1.2811,1.2811,0.5259,0.57049168
+5,./servo\servo_fn_40_train.jsonl,25,26,1.2644,1.2644,0.4768,0.563054937
+6,./servo\servo_fn_60_train.jsonl,10,26,1.9719,1.9719,-293.5087,0.878114545
+7,./servo\servo_fn_60_train.jsonl,15,26,1.2879,1.2879,0.5045,0.573519814
+8,./servo\servo_fn_60_train.jsonl,25,26,1.147,1.147,0.3228,0.510775081
+9,./servo\servo_fn_80_train.jsonl,10,26,1.8351,1.8351,-798.3974,0.817195599
+10,./servo\servo_fn_80_train.jsonl,15,26,0.9389,0.9389,0.6907,0.418105252
+11,./servo\servo_fn_80_train.jsonl,25,26,1.0951,1.0951,0.5369,0.487663288
+12,./servo\servo_fn_full_train.jsonl,10,26,1.4625,1.4625,-2.4208,0.651271627
+13,./servo\servo_fn_full_train.jsonl,15,26,1.1736,1.1736,0.3811,0.522620432
+14,./servo\servo_fn_full_train.jsonl,25,26,1.1318,1.1318,0.2525,0.50400631

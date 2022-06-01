@@ -1,0 +1,16 @@
+﻿,0,1,2,3,4,5
+0,./CCPP\ccpp_fn_20_train.jsonl,10,1436,4.9483,4.9483,0.9154
+1,./CCPP\ccpp_fn_20_train.jsonl,15,1415,1229.2213,115.6998,0
+2,./CCPP\ccpp_fn_20_train.jsonl,25,1404,22.0634,18.3285,0.3315
+3,./CCPP\ccpp_fn_40_train.jsonl,10,1435,5.076,5.076,0.9136
+4,./CCPP\ccpp_fn_40_train.jsonl,15,1416,12.3236,5.028,0.643
+5,./CCPP\ccpp_fn_40_train.jsonl,25,1411,151.7038,27.7947,0.0018
+6,./CCPP\ccpp_fn_60_train.jsonl,10,1434,4.4632,4.4632,0.9331
+7,./CCPP\ccpp_fn_60_train.jsonl,15,1421,109.1789,29.7695,0.0122
+8,./CCPP\ccpp_fn_60_train.jsonl,25,1423,234.5344,33.3622,0.0023
+9,./CCPP\ccpp_fn_80_train.jsonl,10,1433,16.8284,4.3282,0.4624
+10,./CCPP\ccpp_fn_80_train.jsonl,15,1415,35.7311,25.2647,0.1744
+11,./CCPP\ccpp_fn_80_train.jsonl,25,1414,276.6377,153.3803,0.0014
+12,./CCPP\ccpp_fn_full_train.jsonl,10,1430,17.2252,3.6663,0.4554
+13,./CCPP\ccpp_fn_full_train.jsonl,15,1420,243.5565,23.7674,0.0075
+14,./CCPP\ccpp_fn_full_train.jsonl,25,1411,185.6604,25.6792,0.0023

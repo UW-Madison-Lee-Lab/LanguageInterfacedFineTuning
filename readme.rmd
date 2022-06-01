@@ -1,0 +1,12 @@
+LIFT: Language-Interfaced FineTuning for Non-Language Machine Learning Tasks
+
+
+Environment set up:
+pip install openai
+pip install openml
+pip install transformers==4.14.1
+pip install bitsandbytes-cuda111==0.26.0
+pip install datasets==1.16.1
+
+
+Usage:
