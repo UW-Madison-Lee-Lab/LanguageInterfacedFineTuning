@@ -1,0 +1,259 @@
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+failed
+pending
+cancel   163   ft-s1yySuVYmePAzdkhORux1tNc
+{
+  "created_at": 1654521826,
+  "events": [
+    {
+      "created_at": 1654521826,
+      "level": "info",
+      "message": "Created fine-tune: ft-s1yySuVYmePAzdkhORux1tNc",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521856,
+      "level": "info",
+      "message": "Fine-tune costs $32.35",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521857,
+      "level": "info",
+      "message": "Fine-tune enqueued. Queue number: 0",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521945,
+      "level": "info",
+      "message": "Fine-tune cancelled",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": 128,
+    "classification_n_classes": 10,
+    "compute_classification_metrics": true,
+    "learning_rate_multiplier": 0.2,
+    "n_epochs": 5,
+    "prompt_loss_weight": 0.1
+  },
+  "id": "ft-s1yySuVYmePAzdkhORux1tNc",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-3dK6tEaKbjIKWyT4LyIXlxTV",
+  "result_files": [],
+  "status": "cancelled",
+  "training_files": [
+    {
+      "bytes": 46119285,
+      "created_at": 1654521823,
+      "filename": "mnist_train.jsonl",
+      "id": "file-QefWj93o3bTVP8y2wGtohWxt",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "processed",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1654521944,
+  "validation_files": [
+    {
+      "bytes": 11505998,
+      "created_at": 1654521826,
+      "filename": "mnist_val.jsonl",
+      "id": "file-gjmAYyr3pKYtrzlVZ1kyxSem",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "processed",
+      "status_details": null
+    }
+  ]
+}
+Initialize a new GPT3 Model
+pending
+running
+pending
+running
+pending
+running
+Traceback (most recent call last):
+  File "./run_exps/run_gpt3_mnist.py", line 144, in <module>
+    gpt3_fine_tuner.fine_tune(clf_cfgs)
+  File "/workspace/LIFT-arXiv/classification/./models/GPT3FineTuner.py", line 98, in fine_tune
+    self.ft_info = openai.FineTune.retrieve(id=self.ft_id)
+  File "/opt/conda/lib/python3.8/site-packages/openai/api_resources/abstract/api_resource.py", line 16, in retrieve
+    instance.refresh(request_id=request_id)
+  File "/opt/conda/lib/python3.8/site-packages/openai/api_resources/abstract/api_resource.py", line 21, in refresh
+    self.request("get", self.instance_url(), request_id=request_id)
+  File "/opt/conda/lib/python3.8/site-packages/openai/openai_object.py", line 178, in request
+    response, stream, api_key = requestor.request(
+  File "/opt/conda/lib/python3.8/site-packages/openai/api_requestor.py", line 120, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/opt/conda/lib/python3.8/site-packages/openai/api_requestor.py", line 327, in _interpret_response
+    self._interpret_response_line(
+  File "/opt/conda/lib/python3.8/site-packages/openai/api_requestor.py", line 337, in _interpret_response_line
+    raise error.ServiceUnavailableError(
+openai.error.ServiceUnavailableError: The server is overloaded or not ready yet.

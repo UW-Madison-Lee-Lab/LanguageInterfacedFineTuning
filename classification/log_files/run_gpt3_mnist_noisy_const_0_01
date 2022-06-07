@@ -1,0 +1,169 @@
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+failed
+failed
+failed
+failed
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+running
+cancel   83   ft-YyeQUSLscsRQR2ZxwgteM4MN
+{
+  "created_at": 1654521789,
+  "events": [
+    {
+      "created_at": 1654521789,
+      "level": "info",
+      "message": "Created fine-tune: ft-YyeQUSLscsRQR2ZxwgteM4MN",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521814,
+      "level": "info",
+      "message": "Fine-tune costs $32.35",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521814,
+      "level": "info",
+      "message": "Fine-tune enqueued. Queue number: 0",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521817,
+      "level": "info",
+      "message": "Fine-tune started",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521935,
+      "level": "info",
+      "message": "Fine-tune cancelled",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": 128,
+    "classification_n_classes": 10,
+    "compute_classification_metrics": true,
+    "learning_rate_multiplier": 0.2,
+    "n_epochs": 5,
+    "prompt_loss_weight": 0.1
+  },
+  "id": "ft-YyeQUSLscsRQR2ZxwgteM4MN",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-OqEoc4cwNLWJsNeSfudvvLnp",
+  "result_files": [],
+  "status": "cancelled",
+  "training_files": [
+    {
+      "bytes": 46119285,
+      "created_at": 1654521783,
+      "filename": "mnist_train.jsonl",
+      "id": "file-BcAbODeH8Tn7qnAYVJjIyFNb",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "processed",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1654521935,
+  "validation_files": [
+    {
+      "bytes": 11505998,
+      "created_at": 1654521788,
+      "filename": "mnist_val.jsonl",
+      "id": "file-42oShmqpaDWTPTlUiHG2dxm1",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "processed",
+      "status_details": null
+    }
+  ]
+}
+Initialize a new GPT3 Model
+pending
+running
+succeeded
+fine-tune id:  ft-Grc5OaGq5BZK1ri4ejTGlApG
+fine-tune model:  ada:ft-university-of-wisconsin-madison-2022-06-06-15-31-38
+mnist 98.08 89.35
+Val accuracy 98.08
+Test accuracy 89.35

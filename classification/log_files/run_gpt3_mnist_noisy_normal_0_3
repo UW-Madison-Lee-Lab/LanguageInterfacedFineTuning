@@ -1,0 +1,9 @@
+Initialize a new GPT3 Model
+pending
+running
+succeeded
+fine-tune id:  ft-giSWPZt8H4Xegq6nB9thy362
+fine-tune model:  ada:ft-university-of-wisconsin-madison-2022-06-06-23-12-37
+mnist 98.12 54.8
+Val accuracy 98.12
+Test accuracy 54.8

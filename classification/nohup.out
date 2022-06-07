@@ -1,0 +1,61 @@
+/opt/conda/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libc10_hip.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+tensor(12.)
+(60000, 324)
+(10000, 324)
+Save  mnist
+Save prompts for mnist, epsilon=0.05, noise=0.0
+/opt/conda/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libc10_hip.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Namespace(eps=0.3, eval=1, model_name='lenet', type='const')
+torch.Size([60000, 1, 32, 32]) torch.Size([60000]) torch.Size([10000, 1, 32, 32]) torch.Size([10000])
+Acc: 99.71
+Acc: 92.87
+/opt/conda/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libc10_hip.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Namespace(eps=0.3, eval=1, model_name='mlp', type='const')
+torch.Size([60000, 1, 32, 32]) torch.Size([60000]) torch.Size([10000, 1, 32, 32]) torch.Size([10000])
+Acc: 99.28
+Acc: 51.79
+data/mnist_noisy_const_0_1_test.jsonl
+Traceback (most recent call last):
+  File "./run_exps/run_gptj_mnist_perturbed.py", line 170, in <module>
+    gpt.model.load_state_dict(torch.load(model_name, map_location=device))
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 712, in load
+    return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 1046, in _load
+    result = unpickler.load()
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 1016, in persistent_load
+    load_tensor(dtype, nbytes, key, _maybe_decode_ascii(location))
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 1001, in load_tensor
+    wrap_storage=restore_location(storage, location),
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 973, in restore_location
+    return default_restore_location(storage, str(map_location))
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 176, in default_restore_location
+    result = fn(storage, location)
+  File "/opt/conda/lib/python3.8/site-packages/torch/serialization.py", line 158, in _cuda_deserialize
+    return obj.cuda(device)
+  File "/opt/conda/lib/python3.8/site-packages/torch/_utils.py", line 79, in _cuda
+    return new_type(self.size()).copy_(self, non_blocking)
+  File "/opt/conda/lib/python3.8/site-packages/torch/cuda/__init__.py", line 661, in _lazy_new
+    return super(_CudaBase, cls).__new__(cls, *args, **kwargs)
+RuntimeError: CUDA out of memory. Tried to allocate 16.00 MiB (GPU 0; 23.70 GiB total capacity; 11.23 GiB already allocated; 9.06 MiB free; 11.24 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+run_3.sh: line 26: 1171287 Killed                  python ./run_exps/run_gptj_mnist_perturbed.py -d mnist -v 1 -n 1 -t const -e 0.3 > run_gptj_mnist_constant_noise_0_3_with_10000_samples 2>&1
+run_3.sh: line 25: 1171086 Killed                  python ./run_exps/run_gptj_mnist_perturbed.py -d mnist -v 1 -n 1 -t const -e 0.1 > run_gptj_mnist_constant_noise_0_1_with_10000_samples 2>&1
+run_3.sh: line 27: 1172052 Killed                  python ./run_exps/run_gptj_mnist_perturbed.py -d mnist -v 1 -n 1 -t const -e 0.3 > run_gptj_mnist_constant_noise_0_3_with_10000_samples 2>&1
+run_3.sh: line 28: 1: command not found
+data/mnist_noisy_normal_0_01_test.jsonl
+93.0
+running time:  192.25851964950562
+run_3.sh: line 34: rmal: command not found
+data/mnist_noisy_normal_0_01_test.jsonl
+95.0
+running time:  195.9677665233612
+run.sh: line 31: 1257075 Killed                  python ./run_exps/run_gptj_mnist_perturbed.py -d mnist -v 1 -a -e 0.01 --source mlp > run_gptj_mnist_adv_mlp_0_01 2>&1
+run.sh: line 32: 1: command not found
+data/mnist_noisy_sign_0_01_test.jsonl
+55.0
+running time:  200.06503057479858
+run.sh: line 37: syntax error near unexpected token `&'
+run.sh: line 37: `&1 '
+run.sh: line 39: soon!: command not found

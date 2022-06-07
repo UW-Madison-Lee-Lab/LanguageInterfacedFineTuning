@@ -1,0 +1,6 @@
+data/mnist_train.jsonl
+data/mnist_val.jsonl
+data/mnist_adv_mlp_0_01_test.jsonl
+cuda:0
+24.11
+running time:  15560.6623878479

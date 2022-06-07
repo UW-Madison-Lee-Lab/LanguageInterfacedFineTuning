@@ -1,0 +1,489 @@
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+failed
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+succeeded
+failed
+pending
+cancel   405   ft-o6BtQZhbqR3cLnS7erLde615
+{
+  "created_at": 1654521892,
+  "events": [
+    {
+      "created_at": 1654521893,
+      "level": "info",
+      "message": "Created fine-tune: ft-o6BtQZhbqR3cLnS7erLde615",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521915,
+      "level": "info",
+      "message": "Fine-tune costs $32.35",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521915,
+      "level": "info",
+      "message": "Fine-tune enqueued. Queue number: 1",
+      "object": "fine-tune-event"
+    },
+    {
+      "created_at": 1654521979,
+      "level": "info",
+      "message": "Fine-tune cancelled",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": 128,
+    "classification_n_classes": 10,
+    "compute_classification_metrics": true,
+    "learning_rate_multiplier": 0.2,
+    "n_epochs": 5,
+    "prompt_loss_weight": 0.1
+  },
+  "id": "ft-o6BtQZhbqR3cLnS7erLde615",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-l1P2ZLzCxkMmq986xcTkfVrD",
+  "result_files": [],
+  "status": "cancelled",
+  "training_files": [
+    {
+      "bytes": 46119285,
+      "created_at": 1654521889,
+      "filename": "mnist_train.jsonl",
+      "id": "file-eRkXHIDeUqQYJaArngTp1zC7",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "processed",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1654521979,
+  "validation_files": [
+    {
+      "bytes": 11505998,
+      "created_at": 1654521892,
+      "filename": "mnist_val.jsonl",
+      "id": "file-DLmFcm8ml8vWo9rsyeQUxauZ",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "processed",
+      "status_details": null
+    }
+  ]
+}
+Initialize a new GPT3 Model
+pending
+running
+pending
+running
+pending
+running
+succeeded
+fine-tune id:  ft-gZ6iyFeFxK8IQSi39O1EXIm4
+fine-tune model:  ada:ft-university-of-wisconsin-madison-2022-06-06-17-18-46
+mnist 98.15 25.76
+Val accuracy 98.15
+Test accuracy 25.76
