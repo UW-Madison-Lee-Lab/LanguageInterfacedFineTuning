@@ -1,7 +1,14 @@
-import sys, os, openai, json
+import sys, os, json
 sys.path.insert(1, '../utils')
-from GPT3FineTuner import GPT3FineTuner
-from GPTJFineTuner import GPTJFineTuner
+try:    
+    from GPT3FineTuner import GPT3FineTuner
+    import openai
+except:
+    print('Failure: GPT3 is not loaded')
+try:
+    from GPTJFineTuner import GPTJFineTuner
+except:
+    print('Failure: GPTJ is not loaded')
 import numpy as np
 import pandas as pd
 
@@ -134,7 +141,7 @@ def run_setting_gptj(data_dir, n_sims = 3,
                         json_obj = json.loads(line)
                         valid_prompts.append(json_obj['prompt'])
                 # select hyperparameter for each experiment
-                config['lr'] = lr_list
+                config['epochs'] = epochs
                 for sim_idx in range(n_sims):
                     print('---Simulation %d---' % (sim_idx+1))
                     data_sim_dir = '%s/data_%d' % (data_dir, sim_idx+1)
@@ -161,7 +168,7 @@ def run_setting_gptj(data_dir, n_sims = 3,
                     except:
                         p = -1
                         tr_ts_vl_json = {"train_x":train_df[train_df.columns[:p]].values.tolist(),"train_y":list(train_df['y']),"validation_x":valid_df[valid_df.columns[:p]].values.tolist(),"validation_y":list(valid_df['y']),
-                                            "test_x":test_df[test_df.columns[:p]].values.tolist(),"test_y":list(test_df['y']),"gpt3_test_y":y_test_outputs, 'openai_key': openai_key, 'ft_id': gpt3_fine_tuner.ft_id,'model_id':gpt3_fine_tuner.ft_info}
+                                            "test_x":test_df[test_df.columns[:p]].values.tolist(),"test_y":list(test_df['y']),"gptj_test_y":y_test_outputs}
                         with open('%s/data_%d/%s%s_all.json' % (data_dir, sim_idx+1, data_prefix, pc),'w') as fp:
                             json.dump(tr_ts_vl_json,fp)
             

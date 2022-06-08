@@ -1,9 +1,9 @@
-import openai, os, time, torch, sys, importlib, json, copy
+import os, time, torch, sys, importlib, json, copy
 import matplotlib.pyplot as plt
 import numpy as np
 from functools import partial
 import numpy as np
-sys.path.insert(1, '/home/user0/Desktop/LIFT-arXiv')
+sys.path.insert(1, '/u/yzeng58/LIFT-arXiv')
 from gptj import lora_gptj
 from gptj.lora_gptj import AverageMeter
 from resultsCollector import regressionLoss

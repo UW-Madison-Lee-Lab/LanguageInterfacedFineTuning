@@ -1,5 +1,9 @@
 from curses.ascii import RS
-import os, json, openai, time
+import os, json, time
+try:
+    import openai
+except:
+    print('Failure: OpenAI module is not loaded!')
 import numpy as np
 from sklearn import linear_model
 from sklearn.metrics import mean_squared_error
