@@ -2,7 +2,7 @@
 
 [Tuan Dinh](https://tuan-dinh.github.io/) *, [Yuchen Zeng](https://yzeng58.github.io/zyc_cv/) *, Ruisu Zhang, [Ziqian Lin](https://myhakureimu.github.io/), Michael Gira, [Shashank Rajput](https://pages.cs.wisc.edu/~srajput/), [Jy-yong Sohn](https://sites.google.com/view/jsohn), [Dimitris Papailiopoulos](https://papail.io/), [Kangwook Lee](https://kangwooklee.com/)
 
-This repository is the code implementation of paper *[LIFT: Language-Interfaced FineTuning for Non-Language Machine Learning Tasks](https://github.com/UW-Madison-Lee-Lab/LanguageInterfacedFineTuning/blob/master/lift_arxiv.pdf)*.
+This repository is the code implementation of paper *[LIFT: Language-Interfaced FineTuning for Non-Language Machine Learning Tasks](http://arxiv.org/abs/2206.06565)*.
 
 ## Abstract
 
