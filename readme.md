@@ -3,9 +3,8 @@
 [Tuan Dinh](https://tuan-dinh.github.io/) *, [Yuchen Zeng](https://yzeng58.github.io/zyc_cv/) *, Ruisu Zhang, [Ziqian Lin](https://myhakureimu.github.io/), Michael Gira, [Shashank Rajput](https://pages.cs.wisc.edu/~srajput/), [Jy-yong Sohn](https://sites.google.com/view/jsohn), [Dimitris Papailiopoulos](https://papail.io/), [Kangwook Lee](https://kangwooklee.com/)
 
 Advances in Neural Information Processing Systems 35 (NeurIPS 2022).
-Links: [Paper](https://openreview.net/pdf?id=s_PJMEGIUfa),[Poster](https://nips.cc/media/PosterPDFs/NeurIPS%202022/54500.png?t=1669498072.6368294),[Video](https://nips.cc/virtual/2022/poster/54500)
 
-This repository is the code implementation of paper *[LIFT: Language-Interfaced FineTuning for Non-Language Machine Learning Tasks](https://openreview.net/pdf?id=s_PJMEGIUfa)*.
+Links: [Paper](https://openreview.net/pdf?id=s_PJMEGIUfa),[Poster](https://nips.cc/media/PosterPDFs/NeurIPS%202022/54500.png?t=1669498072.6368294),[Video](https://nips.cc/virtual/2022/poster/54500).
 
 ## Abstract
 
