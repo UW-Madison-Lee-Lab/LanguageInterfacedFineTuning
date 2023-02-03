@@ -54,7 +54,7 @@ class GPTJFineTuner(object):
         ans = []
         for txt in outputs:
             try:
-                output = self.prompt2value(txt.split('@@@')[0].split('###')[-1])
+                output = self.prompt2value(txt.split('@@@')[-1].split('###')[0])
             except:
                 output = None
             ans.append(output)
