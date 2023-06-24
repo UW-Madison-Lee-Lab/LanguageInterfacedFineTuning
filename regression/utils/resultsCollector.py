@@ -433,7 +433,7 @@ def collect_data(folder_name, num_sims = 5, metric = 'RAE', settings_syn = None,
     except:
         print('No results for real datasets is found!')
 
-def operate_all_FineTunes_on_openai(op='list', openai_key = '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'):
+def operate_all_FineTunes_on_openai(op='list', openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]'):
     openai.api_key = openai_key
     OpenAIObject = openai.FineTune.list()
     finetune_list = OpenAIObject['data']
@@ -460,7 +460,7 @@ def operate_all_FineTunes_on_openai(op='list', openai_key = 'sk-wO2s7z8l3ojjq7HR
                 flag = True
                 time.sleep(60)
 
-def operate_all_Files_on_openai(op='list', openai_key = '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'):
+def operate_all_Files_on_openai(op='list', openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]'):
     openai.api_key = openai_key
     OpenAIObject = openai.File.list()
     file_list = OpenAIObject['data']

@@ -14,15 +14,15 @@
 # python ./run_exps/run_baseline_mnist.py -m lenet -e 0.1 -v 1
 # python ./run_exps/run_baseline_mnist.py -m lenet -e 0.3 -v 1
 
-#python ./run_exps/run_gpt3_mnist.py -n -u -e 0.01 --openai_key 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 > run_gpt3_mnist_noise_0_01 2>&1 &
-#python ./run_exps/run_gpt3_mnist.py -n -u -e 0.1 --openai_key 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 > run_gpt3_mnist_noise_0_1 2>&1 &
-#python ./run_exps/run_gpt3_mnist.py -n -u -e 0.3 --openai_key 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 > run_gpt3_mnist_noise_0_3 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -n -u -e 0.01 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noise_0_01 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -n -u -e 0.1 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noise_0_1 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -n -u -e 0.3 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noise_0_3 2>&1 &
 
 
 
-#python ./run_exps/run_gpt3_mnist.py -a -e 0.01 --source mlp --openai_key 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 > run_gpt3_mnist_adv_mlp_0_01 2>&1 &
-#python ./run_exps/run_gpt3_mnist.py -a -e 0.1 --source mlp --openai_key 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 > run_gpt3_mnist_adv_mlp_0_1 2>&1 &
-#python ./run_exps/run_gpt3_mnist.py -a -e 0.3 --source mlp -j 1 --openai_key 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 > run_gpt3_mnist_adv_mlp_0_3 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -a -e 0.01 --source mlp --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_adv_mlp_0_01 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -a -e 0.1 --source mlp --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_adv_mlp_0_1 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -a -e 0.3 --source mlp -j 1 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_adv_mlp_0_3 2>&1 &
 
 # for e in 0.02 0.05 0.1 0.3
 # do

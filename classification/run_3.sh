@@ -31,9 +31,9 @@
 # python ./utils/prepare_mnist.py -n -t normal -e 0.02
 # python ./run_exps/run_gptj_mnist_perturbed.py -d mnist -m 100 -v 1 -n 1 -t normal -e 0.02 #> run_gptj_mnist_normal_noise_0_01_with_10000_samples 2>&1
 
-#python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.01 --openai_key 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 > run_gpt3_mnist_noisy_normal_0_01 2>&1 &
-#python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.02 --openai_key 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 > run_gpt3_mnist_noisy_normal_0_02 2>&1 &
-#python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.05 --openai_key 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 > run_gpt3_mnist_noisy_normal_0_05 2>&1 &
-# python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.1 --openai_key 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 > run_gpt3_mnist_noisy_normal_0_1_rerun 2>&1 &
-# python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.3 --openai_key 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 > run_gpt3_mnist_noisy_normal_0_3 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.01 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noisy_normal_0_01 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.02 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noisy_normal_0_02 2>&1 &
+#python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.05 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noisy_normal_0_05 2>&1 &
+# python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.1 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noisy_normal_0_1_rerun 2>&1 &
+# python ./run_exps/run_gpt3_mnist.py -n -t normal -e 0.3 --openai_key [REPLACE IT WITH YOUR OPENAI KEY] > run_gpt3_mnist_noisy_normal_0_3 2>&1 &
 

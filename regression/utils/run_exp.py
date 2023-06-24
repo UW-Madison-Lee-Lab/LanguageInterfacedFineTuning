@@ -158,7 +158,7 @@ def run_setting_gptj(data_dir, n_sims = 3, n_train = 200, n_valid = 50, n_test =
                             del gptj_fine_tuner
 
 def rerun_setting_gpt3(data_dir, n_sims = 3, n_train = 200, n_valid = 50, n_test = 100, data_list = ['linear'], p_list = [1,50,120], integer_list = [False], lb_ub_list = [(-10,10)],
-    noise_level_list = [0.1], num_epochs = 10, lr_list = [0.05, 0.1, 0.2], openai_key = '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',
+    noise_level_list = [0.1], num_epochs = 10, lr_list = [0.05, 0.1, 0.2], openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]',
     valid_temperature = 0.75, model = 'ada', batch_size = 4):
 
     config = {'model_type':model,"num_epochs":num_epochs,"batch_size":batch_size, "lr": lr_list}

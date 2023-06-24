@@ -29,7 +29,7 @@ run_setting_gpt3(
   num_epochs = 10, # number of epochs
   batch_size = 5, # batch size
   lr_list = [0.05, 0.1, 0.2], # select learning rate multiplier from this list 
-  openai_key = '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' # openai key
+  openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]' # openai key
 )
 ```
 
@@ -70,7 +70,7 @@ run_setting_gpt3(
   num_epochs = 10, 
   batch_size = 5, 
   lr_list = [0.05, 0.1, 0.2], 
-  openai_key = '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'
+  openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]'
  )
 ```
 

@@ -45,7 +45,7 @@ run_setting_gpt3(
   donut = False, # whether we want the training samples to be donut-shaped
   outliers = None, # adding outliers (X_out, y_out)
   lr_list = [0.05, 0.1, 0.2], # select learning rate multiplier in GPT-3 from lr_list
-  openai_key = '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', # openai key
+  openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]', # openai key
   valid_temperature = 0.75 # the randomness temperature of GPT-3 prediction
 )
 
@@ -99,7 +99,7 @@ run_setting_gpt3(
   lr_list = [0.05, 0.1, 0.2],
   prefix_list = ['_', '_fn_'], # '_': without feature name; '_fn_': with feature name
   pc_list = ['20', '40', '60', '80', 'full'], # percentage of the dataset used for training
-  openai_key = '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',
+  openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]',
   valid_temperature = 0.75
 )
 ```

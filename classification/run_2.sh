@@ -21,7 +21,7 @@ done
 #                 -d $DID \
 #                 -p 15 \
 #                 -l $LRM \
-#                 -o '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' \
+#                 -o [REPLACE IT WITH YOUR OPENAI KEY] \
 #                 -i $RUN_IDX \
 #                 -y 'ada'
 #         done

@@ -35,7 +35,7 @@ def RMSE_woo(a,b,threshold=20):
     return RMSE(a[~outlier_flag],b[~outlier_flag]), num_outlier
 
 class GPT3FineTuner(object):
-    def __init__(self,config:dict,train_jsonl,valid_jsonl,openai_key='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'):
+    def __init__(self,config:dict,train_jsonl,valid_jsonl,openai_key='[REPLACE IT WITH YOUR OPENAI KEY]'):
         self.config = config
         self.train_jsonl=train_jsonl
         self.valid_jsonl=valid_jsonl

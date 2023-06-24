@@ -142,11 +142,11 @@ def generate_data(data_dir, mode, n_train, n_valid, n_test,
     return dataGen.generate('linear', mode, n_train, n_valid, n_test, 2, False, noise_level, test_int, lb, ub, beta)
 
 def run_setting_gpt3(data_dir, mode_list = ['standard', 'correct', 'contradict'], n_train_list = [4, 8, 16, 32, 64, 125, 256, 512, 1024], n_valid = 50, n_test = 100,
-    num_epochs = 10, batch_size = 5, lr_list = [0.05, 0.1, 0.2], openai_key = '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'):
+    num_epochs = 10, batch_size = 5, lr_list = [0.05, 0.1, 0.2], openai_key = '[REPLACE IT WITH YOUR OPENAI KEY]'):
     if not os.path.isdir(data_dir):
         os.mkdir(data_dir)
     openai.api_key = openai_key
-    # os.system('export OPENAI_API_KEY="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"')
+    # os.system('export OPENAI_API_KEY="[REPLACE IT WITH YOUR OPENAI KEY]"')
 
     p = 2
     config = {'model_type':'ada',"num_epochs":num_epochs,"batch_size":batch_size, 'lr':lr_list}
