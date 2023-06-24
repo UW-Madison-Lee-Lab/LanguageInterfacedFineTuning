@@ -147,7 +147,7 @@ def generate_data(data_dir, lbd, n_train, n_valid, n_test, p = 1,
     return dataGen.generate('linear', 'standard', n_train, n_valid, n_test, p, False, noise_level, test_int, lb, ub, beta, lbd = lbd)
 
 def run_setting_gpt3(data_dir, lbd_list = [0, 10, 50, 100, 1000], n_train = 200, n_valid = 50, n_test = 100, p_list = [1,10,50,100],
-    num_epochs = 10, batch_size = 5, lr_list = [0.05, 0.1, 0.2], openai_key = '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'):
+    num_epochs = 10, batch_size = 5, lr_list = [0.05, 0.1, 0.2], openai_key = [replace it with your openai key]):
     openai.api_key = openai_key
     if not os.path.isdir(data_dir):
         os.mkdir(data_dir)
