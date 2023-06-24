@@ -23,7 +23,7 @@ outliers_list = [lr_out, qr_out, exp_out, cos_out, l1_out, pw_out]
 
 def run_setting_gpt3(data_dir, n_sims = 3, n_train = 200, n_valid = 50, n_test = 100, data_list = ['linear'], p_list = [1,50,120], integer_list = [False], lb_ub_list = [(-10,10)],
     noise_level_list = [0.1], beta = None, resolution = 200, num_epochs = 10, batch_size = 5, grid_int = None, donut = False, outliers = None, use_name_list = [False], lr_list = [0.05, 0.1, 0.2],
-    openai_key = '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',
+    openai_key = [replace it with your openai key],
     valid_temperature = 0.75):
     openai.api_key = openai_key
     for sim_idx in range(n_sims):
