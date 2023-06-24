@@ -10,7 +10,7 @@ def run_setting_gpt3(data_dir, n_sims = 3, num_epochs = 10, batch_size = 5,
                      lr_list = [0.05, 0.1, 0.2],
                      prefix_list = ['_', '_fn_'],
                      pc_list = ['20', '40', '60', '80', 'full'],
-    openai_key = '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',
+    openai_key = [replace it with your openai key],
     valid_temperature = 0.75):
     openai.api_key = openai_key
     for sim_idx in range(n_sims):
