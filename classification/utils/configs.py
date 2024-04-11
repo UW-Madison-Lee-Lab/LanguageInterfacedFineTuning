@@ -6,10 +6,14 @@ openml_data_ids = {1511:2, 871:2, 48:3, 1465:6, 893:2, 882:2, 1457: 50, 1493:100
 
 synthetic_data_ids = {'nnet': 10, 'gaussian9cluster':1, 'blobs':2, 'circles': 3, 'moons':4, 'rolls':5, 'twocircles': 6}
 
+in_context_num_prompts = {48:151,13:286,40496:500,1511:440,893:73,54:846,23:0, 70:0}
+
+sample_size = {48:151,13:286,40496:500,1511:440,893:73,54:846,23:1473}
+
 ACCURACY = 'accuracy'
 IMBALANCE = 'imbalance'
 SAMPLING = 'sampling'
 BAGGING = 'bagging'
 LABEL_CORRUPTION = 'label_corruption'
 TEACH = 'teach'
-FEATURE = 'feature'
+NNET = 'nn_gen_data'
