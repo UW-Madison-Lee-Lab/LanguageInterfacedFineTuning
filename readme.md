@@ -4,7 +4,7 @@
 
 Advances in Neural Information Processing Systems 35 (NeurIPS 2022).
 
-Links: [Paper](https://openreview.net/pdf?id=s_PJMEGIUfa), [Video](https://nips.cc/virtual/2022/poster/54500).
+Links: [Paper](https://openreview.net/pdf?id=s_PJMEGIUfa), [Video](https://nips.cc/virtual/2022/poster/54500), [Website](https://uw-madison-lee-lab.github.io/LanguageInterfacedFineTuning/)
 
 ![Poster](poster.png)
 
