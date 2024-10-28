@@ -1,4 +1,4 @@
 ---
-title: LIFT: Language-Interfaced FineTuning for Non-Language Machine Learning Tasks
+title: "LIFT: Language-Interfaced FineTuning for Non-Language Machine Learning Tasks"
 layout: default
 ---
