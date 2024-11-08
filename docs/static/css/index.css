@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Georgia, serif;
 }
 
 
@@ -51,10 +51,6 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
-.publication-authors {
-    font-family: 'Google Sans', sans-serif;
-}
-
 .publication-venue {
     color: #555;
     width: fit-content;
@@ -71,7 +67,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: #074594 !important;
 }
 
 .publication-authors a:hover {
