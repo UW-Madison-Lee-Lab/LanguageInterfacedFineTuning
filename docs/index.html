@@ -43,6 +43,15 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  
+  <!-- Include Recharts -->
+  <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+  
+  <!-- Include Babel for JSX -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
 
@@ -166,27 +175,27 @@
        <div class="item">
         <img src="static/images/tabular_regression.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          LIFT for tabular regression
+          LIFT for <b>Tabular Regression</b>
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/tabular_classification.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          LIFT for tabular classification
+          LIFT for <b>Tabular Classification</b>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/image_classification.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          LIFT for image classification
+          LIFT for <b>Image Classification</b>
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
       <img src="static/images/image_generation.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-        LIFT for image generation
+        LIFT for <b>Image Generation</b>
      </h2>
    </div>
   </div>
@@ -195,8 +204,162 @@
 </section>
 <!-- End image carousel -->
 
-
 <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
+    <!-- Container for the chart -->
+    <div id="chart-container"></div>
+
+    <!-- Your chart component -->
+    <script type="text/babel">
+      const GPT3ComparisonChart = () => {
+        const data = [
+          {
+            name: 'Customers',
+            'LIICL/Subset': 60.61,
+            'LIICL/Subset-error': 1.42,
+            'LIFT/Subset': 63.26,
+            'LIFT/Subset-error': 6.96,
+            'LIFT/Full-data': 84.85,
+            'LIFT/Full-data-error': 1.42,
+          },
+          {
+            name: 'TAE',
+            'LIICL/Subset': 37.64,
+            'LIICL/Subset-error': 4.02,
+            'LIFT/Subset': 33.33,
+            'LIFT/Subset-error': 1.52,
+            'LIFT/Full-data': 65.59,
+            'LIFT/Full-data-error': 6.63,
+          },
+          {
+            name: 'Vehicle',
+            'LIICL/Subset': 28.82,
+            'LIICL/Subset-error': 2.10,
+            'LIFT/Subset': 23.73,
+            'LIFT/Subset-error': 2.27,
+            'LIFT/Full-data': 70.20,
+            'LIFT/Full-data-error': 2.73,
+          },
+          {
+            name: 'LED',
+            'LIICL/Subset': 8.00,
+            'LIICL/Subset-error': 1.63,
+            'LIFT/Subset': 11.33,
+            'LIFT/Subset-error': 2.62,
+            'LIFT/Full-data': 69.33,
+            'LIFT/Full-data-error': 2.05,
+          },
+          {
+            name: 'Hamster',
+            'LIICL/Subset': 57.78,
+            'LIICL/Subset-error': 6.29,
+            'LIFT/Subset': 53.33,
+            'LIFT/Subset-error': 0.00,
+            'LIFT/Full-data': 53.33,
+            'LIFT/Full-data-error': 0.00,
+          },
+          {
+            name: 'Breast',
+            'LIICL/Subset': 62.07,
+            'LIICL/Subset-error': 1.41,
+            'LIFT/Subset': 70.69,
+            'LIFT/Subset-error': 0.00,
+            'LIFT/Full-data': 71.26,
+            'LIFT/Full-data-error': 1.62,
+          },
+        ];
+
+        return (
+          <div className="w-full h-full p-4">
+            <BarChart
+              width={800}
+              height={500}
+              data={data}
+              margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis 
+                dataKey="name" 
+                angle={-45}
+                textAnchor="end"
+                height={100}
+                interval={0}
+              />
+              <YAxis 
+                label={{ 
+                  value: 'Accuracy', 
+                  angle: -90, 
+                  position: 'insideLeft',
+                  offset: -10
+                }}
+              />
+              <Tooltip />
+              <Legend />
+              <Bar 
+                dataKey="LIICL/Subset" 
+                fill="#8884d8"
+                minPointSize={5}
+              >
+                <ErrorBar 
+                  dataKey="LIICL/Subset-error" 
+                  width={4} 
+                  strokeWidth={2}
+                  stroke="#8884d8"
+                />
+              </Bar>
+              <Bar 
+                dataKey="LIFT/Subset" 
+                fill="#82ca9d"
+                minPointSize={5}
+              >
+                <ErrorBar 
+                  dataKey="LIFT/Subset-error" 
+                  width={4} 
+                  strokeWidth={2}
+                  stroke="#82ca9d"
+                />
+              </Bar>
+              <Bar 
+                dataKey="LIFT/Full-data" 
+                fill="#ffc658"
+                minPointSize={5}
+              >
+                <ErrorBar 
+                  dataKey="LIFT/Full-data-error" 
+                  width={4} 
+                  strokeWidth={2}
+                  stroke="#ffc658"
+                />
+              </Bar>
+            </BarChart>
+          </div>
+        );
+      };
+
+      // Render the component
+      const container = document.getElementById('chart-container');
+      const root = ReactDOM.createRoot(container);
+      root.render(<GPT3ComparisonChart />);
+    </script>
+    
+      <img src="static/images/lift_liicl.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
+        </h2>
+         “LIFT/Full-Data” and “LIFT/Subset” represent LIFT on the full dataset and and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of subset is chosen to satisfy the LMs’ context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than MCC due to the limited training data in some cases.
+      </div>
+    </div>
+  </section>
+
+
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Building on Our Research: Spotlights</h2>
@@ -224,8 +387,6 @@
 </div>
 </div>
 </section>
-
-
 
 
 <!-- Paper poster -->
