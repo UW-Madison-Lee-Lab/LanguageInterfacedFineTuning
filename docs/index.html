@@ -44,11 +44,13 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 
+  <!-- React dependencies -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   
-  <!-- Include Recharts -->
-  <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+  <!-- Include Recharts and its dependencies -->
+  <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
   
   <!-- Include Babel for JSX -->
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -209,10 +211,12 @@
     <div class="container">
       <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
     <!-- Container for the chart -->
-    <div id="chart-container"></div>
+    <div id="chart-container" style="width: 100%; display: flex; justify-content: center;"></div>
 
     <!-- Your chart component -->
     <script type="text/babel">
+      const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ErrorBar } = Recharts;
+
       const GPT3ComparisonChart = () => {
         const data = [
           {
@@ -343,17 +347,20 @@
         );
       };
 
-      // Render the component
-      const container = document.getElementById('chart-container');
-      const root = ReactDOM.createRoot(container);
-      root.render(<GPT3ComparisonChart />);
+      // Wait for DOM to be ready
+      document.addEventListener('DOMContentLoaded', () => {
+        // Render the component
+        const container = document.getElementById('chart-container');
+        const root = ReactDOM.createRoot(container);
+        root.render(<GPT3ComparisonChart />);
+      });
     </script>
     
       <img src="static/images/lift_liicl.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
         Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
         </h2>
-         “LIFT/Full-Data” and “LIFT/Subset” represent LIFT on the full dataset and and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of subset is chosen to satisfy the LMs’ context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than MCC due to the limited training data in some cases.
+         "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than MCC due to the limited training data in some cases.
       </div>
     </div>
   </section>
@@ -430,7 +437,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
