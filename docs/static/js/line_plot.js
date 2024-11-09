@@ -95,5 +95,95 @@ function createPGDCharts() {
     });
 }
 
-// Call the function when the document is ready
-document.addEventListener('DOMContentLoaded', createPGDCharts);
+function createDataAugmentationComparisonChart() {
+    const epsilons = {
+        gaussian: [0, 0.01, 0.1],
+        signed: [0, 0.01, 0.1]
+    };
+    
+    const models = [
+        'ε=0 (no data augmentation)',
+        'ε=0.05',
+        'ε=0.1'
+    ];
+    
+    const gaussianData = {
+        'ε=0 (no data augmentation)': [96.88, 95.27, 56.14],
+        'ε=0.05': [93.80, 94.39, 93.40],
+        'ε=0.1': [93.78, 94.31, 94.98]
+    };
+    
+    const signedData = {
+        // 'LeNet-5': [99.22, 99.26, 99.06],
+        // 'MLP': [98.09, 98.08, 97.39],
+        'ε=0 (no data augmentation)': [96.88, 55.83, 27.73],
+        'ε=0.05': [93.80, 93.46, 61.24],
+        'ε=0.1': [93.78, 94.12, 75.25]
+    };
+
+    const colors = ['#ff6384', '#36a2eb', '#4bc0c0', '#ffcd56', '#9966ff'];
+    
+    const chartConfigs = [
+        {
+            id: 'dataAugmentationChart1',
+            title: 'Gaussian Noise',
+            data: gaussianData,
+            epsilons: epsilons.gaussian
+        },
+        {
+            id: 'dataAugmentationChart2',
+            title: 'Signed Constant Noise',
+            data: signedData,
+            epsilons: epsilons.signed
+        }
+    ];
+
+    chartConfigs.forEach(config => {
+        const ctx = document.getElementById(config.id).getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: config.epsilons.map(e => `ε = ${e}`),
+                datasets: models.map((model, index) => ({
+                    label: model,
+                    data: config.data[model],
+                    borderColor: colors[index],
+                    tension: 0.1,
+                    fill: false
+                }))
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: config.title,
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        min: 20,
+                        title: {
+                            display: true,
+                            text: 'Accuracy (%)'
+                        }
+                    }
+                }
+            }
+        });
+    });
+}
+
+// Update the DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    createPGDCharts();
+    createDataAugmentationComparisonChart();
+});

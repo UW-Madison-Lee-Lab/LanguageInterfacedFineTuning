@@ -61,6 +61,7 @@
             <li><a href="#abstract">Abstract</a></li>
             <li><a href="#tasks">Tasks</a></li>
             <li><a href="#properties">Properties</a></li>
+            <li><a href="#improvements">Improvements</a></li>
             <li><a href="#spotlights">Spotlights</a></li>
             <li><a href="#poster">Poster</a></li>
             <li><a href="#BibTeX">BibTeX</a></li>
@@ -346,6 +347,46 @@
               <p>
                 "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
               </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small" id="improvements">
+  <div class="hero-body">
+    <div class="container">
+
+      <h2 class="title is-3">Improvements</h2>
+
+  <!-- Navigation dots -->
+  <div class="carousel-nav">
+    <div class="nav-buttons">
+      <button class="nav-button active">Data Augmentation</button>
+    </div>
+  </div>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          
+
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <h2 class="title is-3">Effect of Data Augmentation</h2>
+      
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 1200px;">
+                <div style="width: 100%;">
+                  <canvas id="dataAugmentationChart1"></canvas>
+                </div>
+                <div style="width: 100%;">
+                  <canvas id="dataAugmentationChart2"></canvas>
+                </div>
+              </div>
+              
             </div>
           </div>
 
