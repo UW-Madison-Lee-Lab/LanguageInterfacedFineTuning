@@ -267,10 +267,7 @@
   <!-- Navigation dots -->
   <div class="carousel-nav">
     <div class="nav-buttons">
-      <button class="nav-button active">Tabular Regression</button>
-      <button class="nav-button">Tabular Classification</button>
-      <button class="nav-button">Image Classification</button>
-      <button class="nav-button">Image Generation</button>
+      <button class="nav-button active">Fine-tuning vs. ICL</button>
     </div>
   </div>
       <div class="carousel-container">
@@ -292,74 +289,11 @@
             </div>
           </div>
 
-          <div class="carousel-slide">
-            <div class="heatmap-container" id="heatmapContainer">
-              <!-- Heatmap will be inserted here -->
-            </div>
-            <div class="legend">
-              <span>0%</span>
-              <div class="legend-gradient"></div>
-              <span>100%</span>
-            </div>
-
-            <h2 class="subtitle has-text-centered">
-              Heatmap of model performances across OpenML datasets
-            </h2>
-            <p class="content">
-              The heatmap shows performance comparisons between different models across various OpenML datasets. 
-              Darker blue indicates higher accuracy. Hover over cells to see exact accuracy values and standard deviations.
-            </p>
-          </div>
-
-          <div class="carousel-slide">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <img src="static/images/image_classification.png" alt="MY ALT TEXT"/>
-              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                LIFT for <b>Image Classification</b>
-              </h2>
-              <div class="heatmap-container" id="imageHeatmapContainer">
-                <!-- Image data heatmap will be inserted here -->
-              </div>
-              <div class="legend">
-                <span>0%</span>
-                <div class="legend-gradient"></div>
-                <span>100%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <img src="static/images/image_generation.png" alt="MY ALT TEXT"/>
-              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                LIFT for <b>Image Generation</b>
-              </h2>
-            </div>
-          </div>
           
-
 
         </div>
       </div>
   
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small is-light" id="comparison">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
-      
-      <canvas id="comparisonChart"></canvas>
-      
-      
-      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-        Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
-      </h2>
-      <p>
-        "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than MCC due to the limited training data in some cases.
-      </p>
     </div>
   </div>
 </section>
