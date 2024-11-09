@@ -3,6 +3,8 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .carousel-track {
@@ -89,4 +91,4 @@
         padding: 4px 8px;
         font-size: 11px;
     }
-} 
+}

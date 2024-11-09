@@ -215,8 +215,131 @@ function createDataAugmentationComparisonChart() {
     });
 }
 
+function createSampleEfficiencyCharts() {
+    const samples = {
+        blobs: [10, 50, 200, 1000],
+        openml: [10, 50, 200, 1000],
+        regression: [1, 2, 10, 50, 200]
+    };
+    
+    const models = ['Two-stage LIFT/GPT-J', 'LIFT/GPT-J', 'Pretext only'];
+    
+    const blobsData = {
+        'Two-stage LIFT/GPT-J': [52, 68, 95, 95],
+        'LIFT/GPT-J': [12, 30, 80, 80],
+        'Pretext only': [25, 25, 25, 25]
+    };
+    
+    const openMLData = {
+        'Two-stage LIFT/GPT-J': [12, 35, 65, 62],
+        'LIFT/GPT-J': [10, 12, 55, 65],
+        'Pretext only': [12, 12, 12, 12]
+    };
+    
+    const regressionData = {
+        'Two-stage LIFT/GPT-J': [1.8, 1.4, 0.8, 0.3, 0.1],
+        'LIFT/GPT-J': [2.0, 1.5, 0.8, 0.3, 0.1],
+        'Pretext only': [1.4, 1.4, 1.4, 1.4, 1.4]
+    };
+    
+    const chartConfigs = [
+        {
+            id: 'blobsChart',
+            title: 'Blobs',
+            data: blobsData,
+            samples: samples.blobs,
+            yAxisTitle: 'Accuracy',
+            yMin: 0,
+            yMax: 100
+        },
+        {
+            id: 'openMLChart',
+            title: 'LED',
+            data: openMLData,
+            samples: samples.openml,
+            yAxisTitle: 'Accuracy',
+            yMin: 0,
+            yMax: 100
+        },
+        {
+            id: 'regressionChart',
+            title: 'y = 0.2x₁ + 0.4x₂',
+            data: regressionData,
+            samples: samples.regression,
+            yAxisTitle: 'RMSE',
+            yMin: 0,
+            yMax: 2.5
+        }
+    ];
+
+    chartConfigs.forEach(config => {
+        const ctx = document.getElementById(config.id).getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: config.samples.map(s => s.toString()),
+                datasets: models.map((model, index) => ({
+                    label: model,
+                    data: config.data[model],
+                    borderColor: model === 'Two-stage LIFT/GPT-J' ? 'rgb(158,202,225,.8)' :
+                                model === 'LIFT/GPT-J' ? 'rgb(66,146,198,.8)' : 'rgb(6,56,120,.8)',
+                    tension: 0.1,
+                    fill: false,
+                    borderDash: index === 0 ? [2, 2] :
+                               index === 1 ? [5, 5] : [],
+                    borderWidth: index === 0 ? 2 :
+                                index === 1 ? 2 : 3
+                }))
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: config.title,
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            generateLabels: function(chart) {
+                                const datasets = chart.data.datasets;
+                                return datasets.map((dataset, i) => ({
+                                    text: dataset.label,
+                                    fillStyle: 'transparent',
+                                    strokeStyle: dataset.borderColor,
+                                    lineWidth: dataset.borderWidth,
+                                    lineDash: dataset.borderDash,
+                                    hidden: !chart.isDatasetVisible(i),
+                                    index: i
+                                }));
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: config.yMax,
+                        min: config.yMin,
+                        title: {
+                            display: true,
+                            text: config.yAxisTitle
+                        }
+                    }
+                }
+            }
+        });
+    });
+}
+
 // Update the DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', () => {
     createPGDCharts();
     createDataAugmentationComparisonChart();
+    createSampleEfficiencyCharts();
 });
+
+
