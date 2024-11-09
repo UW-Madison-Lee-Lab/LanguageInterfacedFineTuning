@@ -1,5 +1,6 @@
 .container {
     padding: 20px;
+    color: #000000;
 }
 .heatmap-container {
     overflow-x: auto;

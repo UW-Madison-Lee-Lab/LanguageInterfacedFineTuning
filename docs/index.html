@@ -37,7 +37,7 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/liicl.css">
+  <link rel="stylesheet" href="static/css/bar_plot.css">
   <link rel="stylesheet" href="static/css/followup_work.css">
   <link rel="stylesheet" href="static/css/my_slider.css">
   
@@ -49,8 +49,9 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script> 
   <script src="static/js/heatmap.js"></script>
-  <script defer src="static/js/liicl.js"></script>
+  <script defer src="static/js/bar_plot.js"></script>
   <script defer src="static/js/my_slider.js"></script>
+  <script defer src="static/js/line_plot.js"></script>
 </head>
 <body>
 
@@ -152,7 +153,8 @@
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        A high-level illustration of the LIFT framework. LIFT has a two-phase procedure: (1) converting the dataset into sentences and (2) fine-tuning the pretrained LLMs (e.g., GPT) on the obtained sentences. 
+        A high-level illustration of the LIFT framework. 
+        LIFT has four steps: (i) converting the dataset into sentences, (ii) fine-tuning the pretrained LLMs (e.g., GPT) on the obtained sentences, (iii) generating predictions, and (iv) converting the predictions back to the original data format. 
       </h2>
     </div>
   </div>
@@ -268,6 +270,9 @@
   <div class="carousel-nav">
     <div class="nav-buttons">
       <button class="nav-button active">Fine-tuning vs. ICL</button>
+      <button class="nav-button">Pretraining Effect</button>
+      <button class="nav-button">Robustness</button>
+      <button class="nav-button">Benefits of Context</button>
     </div>
   </div>
       <div class="carousel-container">
@@ -277,19 +282,72 @@
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
               <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
       
-              <canvas id="comparisonChart"></canvas>
+              <canvas id="liicl"></canvas>
               
               
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
                 Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
               </h2>
               <p>
-                "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than MCC due to the limited training data in some cases.
+                "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
               </p>
             </div>
           </div>
 
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+                <h2 class="title is-3">Model Performance Comparison</h2>
+                <canvas id="modelComparisonChart"></canvas>
+                <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                    Comparison of accuracies between different model variants
+                </h2>
+                <p>
+                    Performance comparison across different LIFT variants and baselines. LIFT with GPT-3 and GPT-J achieve the best performance, while random initialization (Rand-GPT-J) performs poorly, demonstrating the importance of pre-training.
+                </p>
+            </div>
+        </div>
           
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <h2 class="title is-3">PGD Attack Results</h2>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 1200px;">
+                <div style="width: 100%;">
+                  <canvas id="pgdChart1"></canvas>
+                </div>
+                <div style="width: 100%;">
+                  <canvas id="pgdChart2"></canvas>
+                </div>
+                <div style="width: 100%;">
+                  <canvas id="pgdChart3"></canvas>
+                </div>
+                <div style="width: 100%;">
+                  <canvas id="pgdChart4"></canvas>
+                </div>
+              </div>
+              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                PGD Attack Results on Different Models and Epsilon Values
+              </h2>
+              <p>
+                Comparison of model robustness under PGD attacks with varying epsilon values. The plots show accuracy degradation for LxNet-S, MLP, and LIFT/GPT-3 models under different attack strengths.
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
+      
+              <canvas id="context"></canvas>
+              
+              
+              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
+              </h2>
+              <p>
+                "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
+              </p>
+            </div>
+          </div>
 
         </div>
       </div>
