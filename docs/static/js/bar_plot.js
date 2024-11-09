@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctxNew = document.getElementById('context').getContext('2d');
     
     const contextData = {
-        labels: ['CMC (23)', 'TAE (48)', 'Vehicle (54)'],
+        labels: ['CMC', 'TAE', 'Vehicle'],
         datasets: [
             {
                 label: 'Majority Classifier',

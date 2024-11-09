@@ -296,30 +296,33 @@
               
               
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
+                Comparison of accuracies (↑) between Language-Interfaced ICL (LIICL) and fine-tuning with LIFT on OpenML datasets.
               </h2>
               <p>
-                "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
+                Due to the context length limit of LMs, we use a subset of the training data for ICL. Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
               </p>
             </div>
           </div>
 
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-                <h2 class="title is-3">Model Performance Comparison</h2>
+                <h2 class="title is-3">Yes, LIFT Needs Pretrained Knowledge on Natural Language Data</h2>
                 <canvas id="modelComparisonChart"></canvas>
                 <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                    Comparison of accuracies between different model variants
+                    Comparison of accuracies (↑) between different models.
                 </h2>
                 <p>
-                    Performance comparison across different LIFT variants and baselines. LIFT with GPT-3 and GPT-J achieve the best performance, while random initialization (Rand-GPT-J) performs poorly, demonstrating the importance of pre-training.
+                  Accuracies (↑) of LIFT with different LMs. We compare variants of LIFT with different
+                  LMs: LIFT/GPTs using GPTs pretrained on natural language data (our models), LIFT/Rand-GPT-J
+                  using a randomly initialized GPT-J, LIFT/CodeGen and LIFT/CodeParrot using LMs pretrained on
+                  programming language data, and LIFT/Gibberish using GPT-J fine-tuned on gibberish data.
                 </p>
             </div>
         </div>
           
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <h2 class="title is-3">PGD Attack Results</h2>
+              <h2 class="title is-3">Robustness to Feature Corruption on Test Data</h2>
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 1200px;">
                 <div style="width: 100%;">
                   <canvas id="pgdChart1"></canvas>
@@ -335,26 +338,34 @@
                 </div>
               </div>
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                PGD Attack Results on Different Models and Epsilon Values
+                PGD Attack Results on Different Models and ε Values
               </h2>
               <p>
-                Comparison of model robustness under PGD attacks with varying epsilon values. The plots show accuracy degradation for LxNet-S, MLP, and LIFT/GPT-3 models under different attack strengths.
+                Robustness results on MNIST classification under PGD attacks transferred from LeNet-5 with varying perturbation radius ε. 
+                LIFT/GPT-3 cannot tolerate transferred adversarial attack, implying that the adversarial attack on
+                LeNet-5 is transferred to LIFT/GPT-3.
               </p>
             </div>
           </div>
 
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
+              <h2 class="title is-3">Context-Aware Learning via Prompting</h2>
       
               <canvas id="context"></canvas>
               
               
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
+                Comparison of accuracies (↑) between LIFT/GPTs and LIFT/Rand-GPT-J on OpenML datasets.
               </h2>
               <p>
-                "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
+                The effect of using feature names on LIFT. We compare classification accuracy (↑) of
+                LIFT/GPT-3 when feature names provided in the target dataset are and are not incorporated into
+                the prompts. We provide four versions of LIFT when feature names are correctly incorporated
+                (Correct-Names columns) and when feature names are randomly shuffled (Shuffled-Names columns).
+                We evaluate models on three OpenML datasets, including CMC, TAE, and Vehicle. 
+                We also compare our models with the majority classifier. As a result, all LIFT models achieve better performance than the majority classifier. 
+                Among the evaluated models, LIFTs with correct feature names achieve the best accuracies on all three datasets.
               </p>
             </div>
           </div>
