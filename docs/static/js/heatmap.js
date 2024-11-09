@@ -99,3 +99,49 @@ function createHeatmap() {
 
 // Create heatmap when page loads
 document.addEventListener('DOMContentLoaded', createHeatmap);
+
+// Image classification data
+const imageData = {
+  labels: ['MNIST', 'Permuted MNIST', 'Fashion MNIST', 'Permuted F-MNIST'],
+  models: ['LogReg', 'DT', 'RBF-SVM', 'XG', 'LIFT/GPT-J', 'LIFT/GPT-3'],
+  values: [
+    [91.95, 87.42, 97.70, 97.69, 97.01, 98.15],
+    [92.58, 87.87, 98.06, 97.62, 95.80, 96.25],
+    [85.59, 80.52, 90.59, 90.19, 85.10, 90.18],
+    [84.95, 79.91, 88.04, 89.93, 82.25, 88.92]
+  ]
+};
+
+// Create image heatmap when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('imageHeatmapContainer');
+    if (container) {
+        const table = document.createElement('table');
+        table.className = 'heatmap';
+
+        // Create header row
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = '<th>Dataset</th>' + 
+            imageData.models.map(method => `<th>${method}</th>`).join('');
+        table.appendChild(headerRow);
+
+        // Create data rows
+        imageData.labels.forEach((label, i) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${label}</td>`;
+            
+            imageData.values[i].forEach((value, j) => {
+                const td = document.createElement('td');
+                td.style.backgroundColor = getColor(value);
+                td.style.color = 'black';
+                td.textContent = value.toFixed(1);
+                createTooltip(td, label, imageData.models[j], value, 0);
+                tr.appendChild(td);
+            });
+
+            table.appendChild(tr);
+        });
+
+        container.appendChild(table);
+    }
+});

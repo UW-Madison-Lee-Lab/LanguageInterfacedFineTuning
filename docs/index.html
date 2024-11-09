@@ -48,7 +48,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script> 
-  <script src="static/js/tabular_classification.js"></script>
+  <script src="static/js/heatmap.js"></script>
   <script defer src="static/js/liicl.js"></script>
   <script defer src="static/js/my_slider.js"></script>
 </head>
@@ -188,8 +188,10 @@
   <!-- Navigation dots -->
   <div class="carousel-nav">
     <div class="nav-buttons">
-      <button class="nav-button active">Performance Heatmap</button>
+      <button class="nav-button active">Tabular Classification</button>
       <button class="nav-button">Tabular Regression</button>
+      <button class="nav-button">Image Classification</button>
+      <button class="nav-button">Image Generation</button>
     </div>
   </div>
       <div class="carousel-container">
@@ -221,50 +223,50 @@
               </h2>
             </div>
           </div>
+
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <img src="static/images/image_classification.png" alt="MY ALT TEXT"/>
+              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                LIFT for <b>Image Classification</b>
+              </h2>
+              <div class="heatmap-container" id="imageHeatmapContainer">
+                <!-- Image data heatmap will be inserted here -->
+              </div>
+              <div class="legend">
+                <span>0%</span>
+                <div class="legend-gradient"></div>
+                <span>100%</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <img src="static/images/image_generation.png" alt="MY ALT TEXT"/>
+              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                LIFT for <b>Image Generation</b>
+              </h2>
+              <div class="heatmap-container" id="imageHeatmapContainer">
+                <!-- Image data heatmap will be inserted here -->
+              </div>
+              <div class="legend">
+                <span>0%</span>
+                <div class="legend-gradient"></div>
+                <span>100%</span>
+              </div>
+            </div>
+          </div>
+          
+
+
         </div>
       </div>
   
     </div>
   </div>
 </section>
-
-<!-- Image carousel -->
-<section class="hero is-small" id="tasks">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">One Model, Many Tasks</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/tabular_regression.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          LIFT for <b>Tabular Regression</b>
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/tabular_classification.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          LIFT for <b>Tabular Classification</b>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/image_classification.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          LIFT for <b>Image Classification</b>
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/image_generation.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-        LIFT for <b>Image Generation</b>
-     </h2>
-   </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
 
 <section class="hero is-small is-light" id="comparison">
   <div class="hero-body">
@@ -373,7 +375,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page, and further updated by <a href="https://yzeng58.github.io" target="_blank">Yuchen Zeng</a>.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
