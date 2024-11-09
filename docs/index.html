@@ -63,7 +63,7 @@
             <li><a href="#properties">Properties</a></li>
             <li><a href="#improvements">Improvements</a></li>
             <li><a href="#spotlights">Spotlights</a></li>
-            <li><a href="#BibTeX">Cite</a></li>
+            <li><a href="#BibTeX">Cite Us</a></li>
         </ul>
     </div>
 </nav>
@@ -167,7 +167,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Fine-tuning pretrained language models (LMs) without making any architectural changes has become a norm for learning various language downstream tasks. However, for non-language downstream tasks, a common practice is to employ task-specific designs for input, output layers, and loss functions. For instance, it is possible to fine-tune an LM into an MNIST classifier by replacing the word embedding layer with an image patch embedding layer, the word token output layer with a 10-way output layer, and the word prediction loss with a 10-way classification loss, respectively. A natural question arises: Can LM fine-tuning solve non-language downstream tasks without changing the model architecture or loss function? To answer this, we propose Language-Interfaced Fine-Tuning (LIFT) and study its efficacy and limitations by conducting an extensive empirical study on a suite of non-language classification and regression tasks. LIFT does not make any changes to the model architecture or loss function, and it solely relies on the natural language interface, enabling "no-code machine learning with LMs." We find that LIFT performs comparably well across a wide range of low-dimensional classification and regression tasks, matching the performances of the best baselines in many cases, especially for the classification tasks. We also report experimental results on the fundamental properties of LIFT, including inductive bias, robustness, and sample complexity. We also analyze the effect of pretraining on LIFT and a few properties/techniques specific to LIFT, e.g., context-aware learning via appropriate prompting, calibrated predictions, data generation, and two-stage fine-tuning. 
@@ -184,7 +184,7 @@
   <div class="hero-body">
     <div class="container">
 
-      <h2 class="title is-3">One Model, Many Tasks</h2>
+      <h2 class="title is-2">One Model, Many Tasks</h2>
 
   <!-- Navigation dots -->
   <div class="carousel-nav">
@@ -200,14 +200,18 @@
           
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <img src="static/images/tabular_regression.png" alt="MY ALT TEXT"/>
-              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                LIFT for <b>Tabular Regression</b>
+              <h2 class="title is-3 has-text-centered" style="margin-top: 1rem;">
+                LIFT for Tabular Regression
               </h2>
+              <img src="static/images/tabular_regression.png" alt="MY ALT TEXT"/>
+              Approximating various functions with LIFT using GPT-J. We visualize the target functions (first row) and the predictor functions learned by LIFT on GPT-J (second row). Blue dots show the 1000 training samples. One can observe that LIFT well approximates the target functions.
             </div>
           </div>
 
           <div class="carousel-slide">
+            <h2 class="title is-3 has-text-centered" style="margin-top: 1rem;">
+              LIFT for Tabular Classification
+            </h2>
             <div class="heatmap-container" id="heatmapContainer">
               <!-- Heatmap will be inserted here -->
             </div>
@@ -216,22 +220,19 @@
               <div class="legend-gradient"></div>
               <span>100%</span>
             </div>
-
-            <h2 class="subtitle has-text-centered">
-              Heatmap of model performances across OpenML datasets
-            </h2>
             <p class="content">
-              The heatmap shows performance comparisons between different models across various OpenML datasets. 
-              Darker blue indicates higher accuracy. Hover over cells to see exact accuracy values and standard deviations.
+              Accuracies (↑) on OpenML tabular classification datasets. 
+              We evaluate LIFT/GPTs on OpenML tabular datasets, varying number of features and data classes. 
+              Overall, LIFT/GPTs perform comparably well across tasks, and achieve co mpetitive performances with the best methods, e.g., XGBoost.
             </p>
           </div>
 
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <img src="static/images/image_classification.png" alt="MY ALT TEXT"/>
-              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                LIFT for <b>Image Classification</b>
+              <h2 class="title is-3 has-text-centered" style="margin-top: 1rem;">
+                LIFT for Image Classification
               </h2>
+              <img src="static/images/image_classification.png" alt="MY ALT TEXT"/>
               <div class="heatmap-container" id="imageHeatmapContainer">
                 <!-- Image data heatmap will be inserted here -->
               </div>
@@ -240,18 +241,27 @@
                 <div class="legend-gradient"></div>
                 <span>100%</span>
               </div>
+              <p class="content">
+                Top: Illustration of using LIFT for image classification.
+                Bottom: Accuracies (↑) on image classification datasets. LIFT/GPTs achieve competitive accuracies on this task.
+              </p>
             </div>
           </div>
 
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <img src="static/images/image_generation.png" alt="MY ALT TEXT"/>
-              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                LIFT for <b>Image Generation</b>
+              <h2 class="title is-3 has-text-centered" style="margin-top: 1rem;">
+                LIFT for Image Generation
               </h2>
+              <img src="static/images/image_generation.png" alt="MY ALT TEXT"/>
+              <p class="content">
+                Top: Illustration of using LIFT for image generation.
+                Bottom: Generating MNIST images using
+                LIFT/GPTs. We observe that LIFT/GPTs can
+                generate images of comparably high quality. 
+              </p>
             </div>
           </div>
-          
         </div>
       </div>
   
@@ -264,7 +274,7 @@
   <div class="hero-body">
     <div class="container">
 
-      <h2 class="title is-3">Properties of LIFT</h2>
+      <h2 class="title is-2">A Deep Dive</h2>
 
   <!-- Navigation dots -->
   <div class="carousel-nav">
@@ -280,7 +290,7 @@
           
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
+              <h2 class="title is-2">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
       
               <canvas id="liicl"></canvas>
               
@@ -361,7 +371,7 @@
   <div class="hero-body">
     <div class="container">
 
-      <h2 class="title is-3">Improvements</h2>
+      <h2 class="title is-2">Improvements</h2>
 
   <!-- Navigation dots -->
   <div class="carousel-nav">
@@ -396,10 +406,10 @@
   </div>
 </section>
 
-<section class="hero is-small" id="spotlights">
+<section class="hero is-small is-light" id="spotlights">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Building on Our Research: Spotlights</h2>
+      <h2 class="title is-2">Building on Our Research: Spotlights</h2>
       
       <div class="columns is-centered">
         <div class="column is-10">

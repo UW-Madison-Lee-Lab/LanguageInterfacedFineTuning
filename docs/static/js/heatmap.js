@@ -64,7 +64,7 @@ function createHeatmap() {
     table.className = 'heatmap';
 
     // Create header row
-    const methods = ['LogReg', 'Decision Tree', 'RBF-SVM', 'XGBoost', 'LIFT/GPT-J', 'LIFT/GPT-3'];
+    const methods = ['Logistic Regression', 'Decision Tree', 'RBF-SVM', 'XGBoost', 'LIFT/GPT-J', 'LIFT/GPT-3'];
     const headerRow = document.createElement('tr');
     headerRow.innerHTML = '<th>Dataset</th>' + 
         methods.map(method => `<th>${method}</th>`).join('');
@@ -81,6 +81,7 @@ function createHeatmap() {
             if (method === 'Decision Tree') lookupKey = 'DT';
             if (method === 'XGBoost') lookupKey = 'XG';
             if (method === 'Majority Classifier') lookupKey = 'MCC';
+            if (method === 'Logistic Regression') lookupKey = 'LogReg';
             
             const methodKey = lookupKey.replace('-', '_').replace('/', '_');
             const [value, std] = row[methodKey];

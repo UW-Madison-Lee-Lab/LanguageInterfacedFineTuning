@@ -57,13 +57,17 @@ function createPGDCharts() {
             type: 'line',
             data: {
                 labels: epsilons.map(e => `ε = ${e}`),
-                datasets: models.map(model => ({
+                datasets: models.map((model, index) => ({
                     label: model,
                     data: config.data[model],
-                    borderColor: model === 'LeNet-5' ? '#ff6384' : 
-                               model === 'MLP' ? '#36a2eb' : '#4bc0c0',
+                    borderColor: model === 'LeNet-5' ? 'rgb(158,202,225,.8)' : 
+                               model === 'MLP' ? 'rgb(66,146,198,.8)' : 'rgb(6,56,120,.8)',
                     tension: 0.1,
-                    fill: false
+                    fill: false,
+                    borderDash: model === 'LeNet-5' ? [2, 2] : 
+                              model === 'MLP' ? [5, 5] : [],
+                    borderWidth: model === 'LeNet-5' ? 2 : 
+                               model === 'MLP' ? 2 : 3
                 }))
             },
             options: {
@@ -77,7 +81,21 @@ function createPGDCharts() {
                         }
                     },
                     legend: {
-                        position: 'bottom'
+                        position: 'bottom',
+                        labels: {
+                            generateLabels: function(chart) {
+                                const datasets = chart.data.datasets;
+                                return datasets.map((dataset, i) => ({
+                                    text: dataset.label,
+                                    fillStyle: 'transparent',
+                                    strokeStyle: dataset.borderColor,
+                                    lineWidth: dataset.borderWidth,
+                                    lineDash: dataset.borderDash,
+                                    hidden: !chart.isDatasetVisible(i),
+                                    index: i
+                                }));
+                            }
+                        }
                     }
                 },
                 scales: {
@@ -114,14 +132,10 @@ function createDataAugmentationComparisonChart() {
     };
     
     const signedData = {
-        // 'LeNet-5': [99.22, 99.26, 99.06],
-        // 'MLP': [98.09, 98.08, 97.39],
         'ε=0 (no data augmentation)': [96.88, 55.83, 27.73],
         'ε=0.05': [93.80, 93.46, 61.24],
         'ε=0.1': [93.78, 94.12, 75.25]
     };
-
-    const colors = ['#ff6384', '#36a2eb', '#4bc0c0', '#ffcd56', '#9966ff'];
     
     const chartConfigs = [
         {
@@ -147,9 +161,14 @@ function createDataAugmentationComparisonChart() {
                 datasets: models.map((model, index) => ({
                     label: model,
                     data: config.data[model],
-                    borderColor: colors[index],
+                    borderColor: index === 0 ? 'rgb(158,202,225,.8)' :
+                                index === 1 ? 'rgb(66,146,198,.8)' : 'rgb(6,56,120,.8)',
                     tension: 0.1,
-                    fill: false
+                    fill: false,
+                    borderDash: index === 0 ? [2, 2] :
+                               index === 1 ? [5, 5] : [],
+                    borderWidth: index === 0 ? 2 :
+                                index === 1 ? 2 : 3
                 }))
             },
             options: {
@@ -163,7 +182,21 @@ function createDataAugmentationComparisonChart() {
                         }
                     },
                     legend: {
-                        position: 'bottom'
+                        position: 'bottom',
+                        labels: {
+                            generateLabels: function(chart) {
+                                const datasets = chart.data.datasets;
+                                return datasets.map((dataset, i) => ({
+                                    text: dataset.label,
+                                    fillStyle: 'transparent',
+                                    strokeStyle: dataset.borderColor,
+                                    lineWidth: dataset.borderWidth,
+                                    lineDash: dataset.borderDash,
+                                    hidden: !chart.isDatasetVisible(i),
+                                    index: i
+                                }));
+                            }
+                        }
                     }
                 },
                 scales: {
