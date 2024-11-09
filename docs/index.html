@@ -274,7 +274,7 @@
   <div class="hero-body">
     <div class="container">
 
-      <h2 class="title is-2">A Deep Dive</h2>
+      <h2 class="title is-2">Understanding LIFT: A Deep Dive</h2>
 
   <!-- Navigation dots -->
   <div class="carousel-nav">
@@ -290,13 +290,13 @@
           
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <h2 class="title is-2">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
+              <h2 class="title is-3">Language-Interfaced Learning: Fine-Tuning versus In-Context Learning</h2>
       
               <canvas id="liicl"></canvas>
               
               
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Comparison of accuracies (↑) between Language-Interfaced ICL (LIICL) and fine-tuning with LIFT on OpenML datasets.
+                Comparison of accuracies (↑) between Language-Interfaced ICL (LIICL) and Language-Interfaced Fine-Tuning (LIFT) on OpenML datasets.
               </h2>
               <p>
                 Due to the context length limit of LMs, we use a subset of the training data for ICL. Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than Majority Classifier due to the limited training data in some cases.
@@ -338,7 +338,7 @@
                 </div>
               </div>
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                PGD Attack Results on Different Models and ε Values
+                Results of PGD Attack on Different Models and Attack Strength.
               </h2>
               <p>
                 Robustness results on MNIST classification under PGD attacks transferred from LeNet-5 with varying perturbation radius ε. 
@@ -350,13 +350,13 @@
 
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <h2 class="title is-3">Context-Aware Learning via Prompting</h2>
+              <h2 class="title is-3">Effect of Context-Aware Prompting</h2>
       
               <canvas id="context"></canvas>
               
               
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Comparison of accuracies (↑) between LIFT/GPTs and LIFT/Rand-GPT-J on OpenML datasets.
+                Comparison of accuracies (↑) between models with and without correct feature names on OpenML datasets.
               </h2>
               <p>
                 The effect of using feature names on LIFT. We compare classification accuracy (↑) of
@@ -382,7 +382,7 @@
   <div class="hero-body">
     <div class="container">
 
-      <h2 class="title is-2">Improvements</h2>
+      <h2 class="title is-2">Beyond Basics: Improvements</h2>
 
   <!-- Navigation dots -->
   <div class="carousel-nav">
@@ -411,11 +411,12 @@
               </div>
           
               <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Effect of Two-Stage Fine-Tuning.
+                Accuracies (↑) of LIFT/GPT-J with/without two-stage fine-tuning on tabular datasets.
               </h2>
               <p class="content">
-                The two-stage
-                method applies LIFT first on synthetic pretext data before the real datasets, outperforming
+                For any given dataset, we first generate two pretext tasks with simple synthetic Gaussian datasets sharing the same number of features and the label space
+                (for classification tasks) or the range of responses’ values (for the regression tasks) to the actual
+                data. We apply LIFT first on synthetic pretext data before the real datasets, outperforming
                 fine-tuning when training data is small.
               </p>
             </div>
@@ -440,8 +441,8 @@
               <p class="content">
                 Data augmentation means that we are using a noisy version of MNIST
                 training data by adding Gaussian noise. Given an MNIST
-                image having range [0,1], the noise is added in the L∞ ball
-                with radius ε. One can confirm that the data augmentation
+                image having range [0,1], different levels of noise are added. 
+                One can confirm that the data augmentation
                 significantly improves the tolerance of LIFT/GPT-J against
                 perturbed test data in both Gaussian and signed constant
                 noise. 

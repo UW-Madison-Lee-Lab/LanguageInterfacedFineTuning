@@ -31,12 +31,12 @@ function createPGDCharts() {
     const chartConfigs = [
         {
             id: 'pgdChart1',
-            title: 'Random Noise (Gaussian)',
+            title: 'Random Noise (Gaussian Noise)',
             data: gaussianData
         },
         {
             id: 'pgdChart2',
-            title: 'Random Noise (Signed Const.)',
+            title: 'Random Noise (Signed Constant Noise)',
             data: signedConstData
         },
         {
@@ -120,21 +120,21 @@ function createDataAugmentationComparisonChart() {
     };
     
     const models = [
-        'ε=0 (no data augmentation)',
-        'ε=0.05',
-        'ε=0.1'
+        'No Data Augmentation',
+        'Medium Data Augmentation',
+        'High Data Augmentation'
     ];
     
     const gaussianData = {
-        'ε=0 (no data augmentation)': [96.88, 95.27, 56.14],
-        'ε=0.05': [93.80, 94.39, 93.40],
-        'ε=0.1': [93.78, 94.31, 94.98]
+        'No Data Augmentation': [96.88, 95.27, 56.14],
+        'Medium Data Augmentation': [93.80, 94.39, 93.40],
+        'High Data Augmentation': [93.78, 94.31, 94.98]
     };
     
     const signedData = {
-        'ε=0 (no data augmentation)': [96.88, 55.83, 27.73],
-        'ε=0.05': [93.80, 93.46, 61.24],
-        'ε=0.1': [93.78, 94.12, 75.25]
+        'No Data Augmentation': [96.88, 55.83, 27.73],
+        'Medium Data Augmentation': [93.80, 93.46, 61.24],
+        'High Data Augmentation': [93.78, 94.12, 75.25]
     };
     
     const chartConfigs = [
@@ -222,24 +222,24 @@ function createSampleEfficiencyCharts() {
         regression: [1, 2, 10, 50, 200]
     };
     
-    const models = ['Two-stage LIFT/GPT-J', 'LIFT/GPT-J', 'Pretext only'];
+    const models = ['Pretext only', 'LIFT/GPT-J', 'Two-stage LIFT/GPT-J'];
     
     const blobsData = {
-        'Two-stage LIFT/GPT-J': [52, 68, 95, 95],
+        'Pretext only': [25, 25, 25, 25],
         'LIFT/GPT-J': [12, 30, 80, 80],
-        'Pretext only': [25, 25, 25, 25]
+        'Two-stage LIFT/GPT-J': [52, 68, 95, 95]
     };
     
     const openMLData = {
-        'Two-stage LIFT/GPT-J': [12, 35, 65, 62],
+        'Pretext only': [12, 12, 12, 12],
         'LIFT/GPT-J': [10, 12, 55, 65],
-        'Pretext only': [12, 12, 12, 12]
+        'Two-stage LIFT/GPT-J': [12, 35, 65, 62]
     };
     
     const regressionData = {
-        'Two-stage LIFT/GPT-J': [1.8, 1.4, 0.8, 0.3, 0.1],
+        'Pretext only': [1.4, 1.4, 1.4, 1.4, 1.4],
         'LIFT/GPT-J': [2.0, 1.5, 0.8, 0.3, 0.1],
-        'Pretext only': [1.4, 1.4, 1.4, 1.4, 1.4]
+        'Two-stage LIFT/GPT-J': [1.8, 1.4, 0.8, 0.3, 0.1]
     };
     
     const chartConfigs = [
@@ -281,14 +281,14 @@ function createSampleEfficiencyCharts() {
                 datasets: models.map((model, index) => ({
                     label: model,
                     data: config.data[model],
-                    borderColor: model === 'Two-stage LIFT/GPT-J' ? 'rgb(158,202,225,.8)' :
-                                model === 'LIFT/GPT-J' ? 'rgb(66,146,198,.8)' : 'rgb(6,56,120,.8)',
+                    borderColor: model === 'Two-stage LIFT/GPT-J' ? 'rgb(6,56,120,.8)' :
+                                model === 'LIFT/GPT-J' ? 'rgb(66,146,198,.8)' : 'rgb(158,202,225,.8)',
                     tension: 0.1,
                     fill: false,
                     borderDash: index === 0 ? [2, 2] :
                                index === 1 ? [5, 5] : [],
-                    borderWidth: index === 0 ? 2 :
-                                index === 1 ? 2 : 3
+                    borderWidth: index === 0 ? 3 :
+                                index === 1 ? 2 : 2
                 }))
             },
             options: {

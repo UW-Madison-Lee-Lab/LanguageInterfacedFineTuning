@@ -37,10 +37,6 @@ const liicl = new Chart(ctx, {
         legend: {
         position: 'top',
         },
-        title: {
-        display: true,
-        text: 'Comparison of Accuracies Between ICL and Fine-Tuning with LIFT on OpenML Datasets'
-        }
     },
     scales: {
         x: {
@@ -99,13 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 legend: {
                     display: false
                 },
-                title: {
-                    display: true,
-                    text: 'Model Performance Comparison',
-                    font: {
-                        size: 16
-                    }
-                }
             },
             scales: {
                 y: {
@@ -169,13 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 legend: {
                     position: 'top'
                 },
-                title: {
-                    display: true,
-                    text: 'Majority Classifier vs LIFT Performance Comparison',
-                    font: {
-                        size: 16
-                    }
-                }
             },
             scales: {
                 y: {
