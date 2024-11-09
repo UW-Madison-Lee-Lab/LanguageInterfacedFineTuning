@@ -1,0 +1,105 @@
+
+.container {
+    padding: 20px;
+}
+.heatmap-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+.heatmap {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 800px;
+}
+.heatmap th, .heatmap td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.heatmap th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+.heatmap td:first-child {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 100;
+    display: none;
+    white-space: nowrap;
+}
+.button-group {
+    margin-bottom: 20px;
+}
+.legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.legend-gradient {
+    width: 200px;
+    height: 20px;
+    background: linear-gradient(to right, #f7fbff, #084594);
+    margin: 0 10px;
+}
+.nav-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #f5f5f7;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Add this at the top of your style section */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Add some padding to section tops to prevent the nav bar from covering section headers */
+section[id] {
+    scroll-margin-top: 60px;
+}
