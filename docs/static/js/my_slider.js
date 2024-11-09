@@ -36,9 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateCarousel() {
+        // Calculate the maximum translation
+        const maxTranslation = (slides.length - 1) * 100;
+        
+        // If we're trying to go beyond the last slide
+        if (currentSlide * 100 > maxTranslation) {
+            currentSlide = 0; // Reset to first slide
+        }
+        
         track.style.transform = `translateX(-${currentSlide * 100}%)`;
         
-        // Update active button instead of dots
+        // Update active button
         buttons.forEach((button, index) => {
             button.classList.toggle('active', index === currentSlide);
         });
