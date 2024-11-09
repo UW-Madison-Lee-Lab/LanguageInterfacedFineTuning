@@ -182,10 +182,18 @@
 <section class="hero is-small" id="tasks">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <!-- Add this where you want the carousel to appear -->
+
+      <h2 class="title is-3">One Model, Many Tasks</h2>
+
+  <!-- Navigation dots -->
+  <div class="carousel-nav">
+    <div class="nav-buttons">
+      <button class="nav-button active">Performance Heatmap</button>
+      <button class="nav-button">Tabular Regression</button>
+    </div>
+  </div>
       <div class="carousel-container">
         <div class="carousel-track">
-          <!-- Original content slide -->
           <div class="carousel-slide">
             <div class="heatmap-container" id="heatmapContainer">
               <!-- Heatmap will be inserted here -->
@@ -205,7 +213,6 @@
             </p>
           </div>
           
-          <!-- Additional slides as needed -->
           <div class="carousel-slide">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
               <img src="static/images/tabular_regression.png" alt="MY ALT TEXT"/>
@@ -217,12 +224,6 @@
         </div>
       </div>
   
-  <!-- Navigation dots -->
-  <div class="carousel-nav">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <!-- Add more dots as needed -->
-      </div>
     </div>
   </div>
 </section>
@@ -280,32 +281,6 @@
         "LIFT/Full-Data" and "LIFT/Subset" represent LIFT on the full dataset and its subset used correspondingly in the ICL setting (number of prompts). Here, the size of the subset is chosen to satisfy the LMs' context length. Overall, LIFT/GPTs on full data achieve the best performances. However, when using the same number of samples, LIFT and ICL are more comparable in most cases. Note that both methods may be worse than MCC due to the limited training data in some cases.
       </p>
     </div>
-  </div>
-</section>
-
-<section class="hero is-small is-light" id="performance">
-  <div class="hero-body">
-      <div class="container is-max-desktop">
-          <h2 class="title is-3">Model Performance Comparison Heatmap - OpenML Datasets</h2>
-          
-          <div class="heatmap-container" id="heatmapContainer">
-              <!-- Heatmap will be inserted here -->
-          </div>
-          
-          <div class="legend">
-              <span>0%</span>
-              <div class="legend-gradient"></div>
-              <span>100%</span>
-          </div>
-
-          <h2 class="subtitle has-text-centered">
-              Heatmap of model performances across OpenML datasets
-          </h2>
-          <p class="content">
-              The heatmap shows performance comparisons between different models across various OpenML datasets. 
-              Darker blue indicates higher accuracy. Hover over cells to see exact accuracy values and standard deviations.
-          </p>
-      </div>
   </div>
 </section>
 
@@ -371,21 +346,6 @@
     </div>
   </div>
 </section>
-
-<!-- Paper poster -->
-<section class="hero is-small is-light" id="poster">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/lift_poster.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">

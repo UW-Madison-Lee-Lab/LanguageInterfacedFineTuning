@@ -35,3 +35,29 @@
 .dot.active {
     background-color: #333;
 }
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  
+  .nav-button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-button.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+  
+  .nav-button:hover:not(.active) {
+    background-color: #f5f5f5;
+  } 

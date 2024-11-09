@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
+    const buttons = document.querySelectorAll('.nav-button');
     let currentSlide = 0;
     const slideInterval = 5000; // 5 seconds between slides
 
@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         slideTimer = setInterval(autoSlide, slideInterval);
     });
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
             currentSlide = index;
             updateCarousel();
             // Reset timer when manually changing slides
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCarousel() {
         track.style.transform = `translateX(-${currentSlide * 100}%)`;
         
-        // Update active dot
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+        // Update active button instead of dots
+        buttons.forEach((button, index) => {
+            button.classList.toggle('active', index === currentSlide);
         });
     }
 });

@@ -1,7 +1,11 @@
 body {
-  font-family: Georgia, serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+.nav-button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+}
 
 .footer .icon-link {
     font-size: 25px;
@@ -24,11 +28,12 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: inherit;
 }
 
 
 .publication-title {
+  font-family: inherit;
 }
 
 .publication-banner {
@@ -48,7 +53,7 @@ body {
 }
 
 .publication-title {
-    font-family: 'Google Sans', sans-serif;
+    font-family: inherit;
 }
 
 .publication-venue {
