@@ -36,20 +36,21 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/liicl.css">
+  <link rel="stylesheet" href="static/css/followup_work.css">
+  <link rel="stylesheet" href="static/css/my_slider.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script> 
-
-  <!-- Chart.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/liicl.css">
   <script src="static/js/tabular_classification.js"></script>
-
+  <script defer src="static/js/liicl.js"></script>
+  <script defer src="static/js/my_slider.js"></script>
 </head>
 <body>
 
@@ -159,6 +160,7 @@
 </section>
 <!-- End teaser video -->
 
+
 <!-- Paper abstract -->
 <section class="section hero is-light" id="abstract">
   <div class="container is-max-desktop">
@@ -176,6 +178,54 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Image carousel -->
+<section class="hero is-small" id="tasks">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <!-- Add this where you want the carousel to appear -->
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <!-- Original content slide -->
+          <div class="carousel-slide">
+            <div class="heatmap-container" id="heatmapContainer">
+              <!-- Heatmap will be inserted here -->
+            </div>
+            <div class="legend">
+              <span>0%</span>
+              <div class="legend-gradient"></div>
+              <span>100%</span>
+            </div>
+
+            <h2 class="subtitle has-text-centered">
+              Heatmap of model performances across OpenML datasets
+            </h2>
+            <p class="content">
+              The heatmap shows performance comparisons between different models across various OpenML datasets. 
+              Darker blue indicates higher accuracy. Hover over cells to see exact accuracy values and standard deviations.
+            </p>
+          </div>
+          
+          <!-- Additional slides as needed -->
+          <div class="carousel-slide">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+              <img src="static/images/tabular_regression.png" alt="MY ALT TEXT"/>
+              <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                LIFT for <b>Tabular Regression</b>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  <!-- Navigation dots -->
+  <div class="carousel-nav">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <!-- Add more dots as needed -->
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Image carousel -->
 <section class="hero is-small" id="tasks">
@@ -222,70 +272,6 @@
       
       <canvas id="comparisonChart"></canvas>
       
-      <script>
-        const ctx = document.getElementById('comparisonChart').getContext('2d');
-        const comparisonChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Customers', 'TAE', 'Vehicle', 'LED', 'Hamster', 'Breast'],
-            datasets: [
-              {
-                label: 'LIICL/Subset',
-                data: [60.61, 37.64, 28.82, 8.00, 57.78, 62.07],
-                backgroundColor: 'rgba(6,56,120,0.8)',
-                borderColor: 'rgba(6,56,120,1)',
-                borderWidth: 1
-              },
-              {
-                label: 'LIFT/Subset',
-                data: [63.26, 33.33, 23.73, 11.33, 53.33, 70.69],
-                backgroundColor: 'rgba(34,113,181,0.8)',
-                borderColor: 'rgba(34,113,181,1)',
-                borderWidth: 1
-              },
-              {
-                label: 'LIFT/Full-data',
-                data: [84.85, 65.59, 70.20, 69.33, 53.33, 71.26],
-                backgroundColor: 'rgba(158,202,225,0.8)',
-                borderColor: 'rgba(158,202,225,1)',
-                borderWidth: 1
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            plugins: {
-              tooltip: {
-                mode: 'index',
-                intersect: false,
-              },
-              legend: {
-                position: 'top',
-              },
-              title: {
-                display: true,
-                text: 'Comparison of Accuracies Between ICL and Fine-Tuning with LIFT on OpenML Datasets'
-              }
-            },
-            scales: {
-              x: {
-                stacked: false,
-                title: {
-                  display: true,
-                  text: 'Datasets'
-                }
-              },
-              y: {
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: 'Accuracy (%)'
-                }
-              }
-            }
-          }
-        });
-      </script>
       
       <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
         Comparison of accuracies between ICL and fine-tuning with LIFT on OpenML datasets.
@@ -323,35 +309,68 @@
   </div>
 </section>
 
-<section class="hero is-small" id="spotlights">
+<section class="hero is-small" id="key-points">
   <div class="hero-body">
-    <div class="container">
+    <div class="container is-max-desktop">
       <h2 class="title is-3">Building on Our Research: Spotlights</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/nature_small.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          Nature Machine Intelligence paper on GPT-3 fine-tuning for complex chemistry problems using LIFT
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/iclr.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          ICLR Paper integrating LLMs with Bayesian Optimization for hyperparameter tuning using LIFT
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/bolift.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-          BO-LIFT: in-context learning with LLMs for Bayesian Optimization of catalysts
-       </h2>
-     </div>
-  </div>
-</div>
-</div>
-</section>
+      
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <!-- First point -->
+          <div class="box highlight-box">
+            <div class="columns is-vcentered">
+              <div class="column is-1">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-flask fa-2x"></i>
+                </span>
+              </div>
+              <div class="column">
+                <div class="highlight-content">
+                  <span class="highlight-title">Predictive Chemistry</span>
+                  <p>Leveraging large language models for predictive chemistry. <a href="https://www.nature.com/articles/s42256-023-00788-1">Learn more</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Second point -->
+          <div class="box highlight-box">
+            <div class="columns is-vcentered">
+              <div class="column is-1">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-chart-line fa-2x"></i>
+                </span>
+              </div>
+              <div class="column">
+                <div class="highlight-content">
+                  <span class="highlight-title">Competitive Performance</span>
+                  <p>Achieves comparable results to specialized models across various classification and regression tasks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third point -->
+          <div class="box highlight-box">
+            <div class="columns is-vcentered">
+              <div class="column is-1">
+                <span class="icon is-large has-text-primary">
+                  <i class="fas fa-brain fa-2x"></i>
+                </span>
+              </div>
+              <div class="column">
+                <div class="highlight-content">
+                  <span class="highlight-title">Versatile Applications</span>
+                  <p>Successfully handles diverse tasks from tabular data to image classification through language-based interfaces.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Paper poster -->
 <section class="hero is-small is-light" id="poster">
