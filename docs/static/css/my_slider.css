@@ -41,23 +41,51 @@
     justify-content: center;
     gap: 8px;
     margin-top: 20px;
-  }
-  
-  .nav-button {
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.nav-button {
     padding: 8px 16px;
     border: 1px solid #ccc;
     background-color: white;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-  
-  .nav-button.active {
+    font-size: 14px;
+    white-space: nowrap;
+    margin: 4px;
+}
+
+.nav-button.active {
     background-color: black;
     color: white;
     border-color: black;
-  }
-  
-  .nav-button:hover:not(.active) {
+}
+
+.nav-button:hover:not(.active) {
     background-color: #f5f5f5;
-  } 
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .nav-buttons {
+        gap: 6px;
+    }
+    
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-buttons {
+        gap: 4px;
+    }
+    
+    .nav-button {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+} 

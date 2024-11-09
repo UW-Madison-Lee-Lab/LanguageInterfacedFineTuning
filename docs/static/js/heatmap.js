@@ -49,8 +49,31 @@ function createTooltip(cell, dataset, method, value, std) {
     `;
     cell.appendChild(tooltip);
 
-    cell.addEventListener('mouseover', () => {
+    cell.addEventListener('mouseover', (e) => {
         tooltip.style.display = 'block';
+        
+        // Position tooltip based on screen size and scroll position
+        const rect = cell.getBoundingClientRect();
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Check if tooltip would go off-screen to the right
+        const tooltipWidth = tooltip.offsetWidth;
+        const spaceToRight = window.innerWidth - (rect.left + tooltipWidth);
+        
+        if (spaceToRight < 0) {
+            // Position tooltip to the left of the cell
+            tooltip.style.left = 'auto';
+            tooltip.style.right = '100%';
+        } else {
+            // Position tooltip to the right of the cell
+            tooltip.style.left = '100%';
+            tooltip.style.right = 'auto';
+        }
+        
+        // Adjust vertical position
+        tooltip.style.top = '50%';
+        tooltip.style.transform = 'translateY(-50%)';
     });
 
     cell.addEventListener('mouseout', () => {

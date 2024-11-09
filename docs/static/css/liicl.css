@@ -1,18 +1,20 @@
-
 .container {
     padding: 20px;
 }
 .heatmap-container {
     overflow-x: auto;
     margin: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
 }
 .heatmap {
     border-collapse: collapse;
     width: 100%;
-    min-width: 800px;
+    min-width: 600px;
+    font-size: 14px;
 }
 .heatmap th, .heatmap td {
-    padding: 10px;
+    padding: 8px;
     text-align: center;
     border: 1px solid #ddd;
     position: relative;
@@ -61,25 +63,33 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .nav-container {
     max-width: 980px;
     margin: 0 auto;
-    padding: 0 22px;
-    height: 44px;
+    padding: 0 15px;
+    height: auto;
+    min-height: 44px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    flex-wrap: wrap;
+    gap: 20px;
     align-items: center;
+    justify-content: center;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
+}
+
+.nav-links li {
+    margin: 5px 0;
 }
 
 .nav-links a {
@@ -88,10 +98,55 @@
     font-size: 14px;
     opacity: 0.8;
     transition: opacity 0.3s;
+    white-space: nowrap;
+    padding: 5px 10px;
 }
 
 .nav-links a:hover {
     opacity: 1;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        gap: 10px;
+        padding: 8px 0;
+    }
+    
+    .nav-links a {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+    .heatmap {
+        min-width: 450px;
+        font-size: 12px;
+    }
+    
+    .heatmap th, .heatmap td {
+        padding: 6px 4px;
+    }
+    
+    .tooltip {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .nav-links {
+        gap: 8px;
+    }
+    .heatmap {
+        min-width: 350px;
+    }
+    
+    .heatmap th, .heatmap td {
+        padding: 4px 2px;
+    }
 }
 
 /* Add this at the top of your style section */
