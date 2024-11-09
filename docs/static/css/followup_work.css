@@ -2,12 +2,18 @@
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .highlight-box .icon {
-  color: #074594 !important;
+  color: #000000 !important;
 }
 
 .highlight-content {
@@ -16,7 +22,7 @@
 }
 
 .highlight-title {
-  color: #074594;
+  color: #000000;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
